@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TMDB Top Rated Movies</string>
+    <string name="title">Movie Name</string>
+    <string name="publish_date">Published Date</string>
+    <string name="vote_average">Vote Average</string>
+    <string name="vote_count">Vote Count</string>
+    <string name="popularity">Popularity</string>
+    <string name="originalLanguage">Original Language</string>
+    <string name="overview">Overview</string>
+</resources>
