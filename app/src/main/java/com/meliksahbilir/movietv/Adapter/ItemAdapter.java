@@ -6,10 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.meliksahbilir.movietv.ApiService.ApiClass;
-import com.meliksahbilir.movietv.MovieDetails;
+import com.meliksahbilir.movietv.ApiService.Client;
 import com.meliksahbilir.movietv.R;
 import com.squareup.picasso.Picasso;
 import com.meliksahbilir.movietv.DataModel.MovieResponse;
@@ -43,7 +41,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder> {
         MovieResponse movieResponse = customList.get(position);
         holder.movieName.setText(movieResponse.getOriginal_title());
         holder.movieInfo.setText(movieResponse.getOverview());
-        Picasso.get().load(ApiClass.Base_Pic+movieResponse.getPoster_path()).into(holder.movie_pic);
+        Picasso.get().load(Client.Base_PIC+movieResponse.getPoster_path()).into(holder.movie_pic);
     }
 
     public interface ItemClickListener {
@@ -62,7 +60,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder> {
 
     @Override
     public int getItemCount() {
-        return customList.size();
+        return customList == null ? 0 : customList.size();
     }
 
     // ITEM_HOLDER

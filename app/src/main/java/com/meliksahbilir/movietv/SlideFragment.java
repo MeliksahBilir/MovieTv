@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.meliksahbilir.movietv.ApiService.ApiClass;
+import com.meliksahbilir.movietv.ApiService.Client;
 import com.meliksahbilir.movietv.DataModel.MovieResponse;
 import com.squareup.picasso.Picasso;
 
@@ -54,7 +54,7 @@ public class SlideFragment extends Fragment {
         TextView popularity = rootView.findViewById(R.id.popularity);
         TextView overview = rootView.findViewById(R.id.overview);
 
-        Picasso.get().load(ApiClass.Base_Pic + response.getPoster_path()).fit().into(image);
+        Picasso.get().load(Client.Base_PIC + response.getPoster_path()).fit().into(image);
         title.setText(response.getTitle());
         publish_date.setText(response.getRelease_date());
         vote_average.setText("10 / " + String.valueOf(response.getVote_average()));
